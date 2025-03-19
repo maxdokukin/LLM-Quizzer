@@ -15,7 +15,6 @@ load_dotenv()
 class CanvasNavigator:
     def __init__(self):
         self.canvas_link = os.getenv('CANVAS_LINK')
-        self.quiz_link = os.getenv('QUIZ_LINK')
         self.username = os.getenv('USERNAME')
         self.password = os.getenv('PASSWORD')
         self.verbose = os.getenv('VERBOSE', 'True') == 'True'
@@ -74,8 +73,8 @@ class CanvasNavigator:
             self.print_verbose(f"Login verification failed: {e}")
             self.driver.quit()
 
-    def navigate_to_quiz(self):
-        self.driver.get(self.quiz_link)
+    def navigate_to_quiz(self, quiz_link):
+        self.driver.get(quiz_link)
         self.print_verbose("Navigated to quiz.")
         time.sleep(5)
 
@@ -166,12 +165,35 @@ class CanvasNavigator:
 
         return questions_data
 
-def select_option_by_id(self, option_id):
-    try:
-        self.driver.execute_script(f"document.getElementById('{option_id}').click();")
-        self.print_verbose(f"Clicked option with ID {option_id}.")
-    except Exception as e:
-        self.print_verbose(f"Failed to click option {option_id}: {e}")
+    def select_option_by_id(self, option_id):
+        try:
+            self.driver.execute_script(f"document.getElementById('{option_id}').click();")
+            self.print_verbose(f"Clicked option with ID {option_id}.")
+        except Exception as e:
+            self.print_verbose(f"Failed to click option {option_id}: {e}")
 
 
+    def submit_quiz(self):
+        """
+        Clicks the 'Submit Quiz' button on a Canvas quiz page.
+        """
+        self.print_verbose("Function: submit_quiz")
 
+        try:
+            # Wait until the 'Submit Quiz' button is clickable
+            submit_button = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "submit_quiz_button"))
+            )
+
+            # Click the 'Submit Quiz' button
+            submit_button.click()
+            self.print_verbose("Clicked the 'Submit Quiz' button.")
+
+            # Optional: Wait for confirmation of submission (modify selector based on UI behavior)
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "quiz_submission_confirmation"))
+            )
+            self.print_verbose("Quiz submission confirmed.")
+
+        except Exception as e:
+            self.print_verbose(f"Error clicking the 'Submit Quiz' button: {e}")
