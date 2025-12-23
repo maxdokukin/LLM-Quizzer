@@ -8,17 +8,18 @@ if __name__ == "__main__":
     navigator = CanvasNavigator()
 
     quiz_data = [
-        # ("Student Organization Basics", "https://sjsu.instructure.com/courses/1588185/quizzes/1760127", "Student Organization Basics.txt"),
-        # ("Student Organization Basics", "https://sjsu.instructure.com/courses/1588185/quizzes/1760137?module_item_id=15535888", "../data/raw/Student Organization Basics.txt"),
-        # ("Community Standards", "https://sjsu.instructure.com/courses/1588185/quizzes/1760139?module_item_id=15535889", "../data/raw/Community Standards.txt"),
-        # ("Club Officers", "https://sjsu.instructure.com/courses/1588185/quizzes/1760130?module_item_id=15535890", "../data/raw/Club Officers.txt"),
-        # ("Title IX ", "https://sjsu.instructure.com/courses/1588185/quizzes/1760132?module_item_id=15535891", "../data/raw/T9.txt"),
-        # ("Hazing", "https://sjsu.instructure.com/courses/1588185/quizzes/1760138?module_item_id=15535892", "../data/raw/Hazing.txt"),
-        # ("Events and Spaces on Campus", "https://sjsu.instructure.com/courses/1588185/quizzes/1760133?module_item_id=15564493", "../data/raw/Events and Spaces on Campus.txt"),
-        # ("Funding", "https://sjsu.instructure.com/courses/1588185/quizzes/1760131?module_item_id=15539316", "../data/raw/Funding.txt"),
-        # ("Marketing, Advertising", "https://sjsu.instructure.com/courses/1588185/quizzes/1760136?module_item_id=15539317", "../data/raw/Marketing, Advertising.txt"),
-        # ("Alcohol", "https://sjsu.instructure.com/courses/1588185/quizzes/1760128?module_item_id=15539318", "../data/raw/Alcohol.txt"),
-        ("Event Planning", "https://sjsu.instructure.com/courses/1588185/quizzes/1760848?module_item_id=15539326", "../data/raw/Event Planning.txt"),
+        # ("Intro", "https://sjsu.instructure.com/courses/1606720/quizzes/1831910/", "../data/raw/Intro.txt"),
+        # ("Recognition Status", "https://sjsu.instructure.com/courses/1606720/quizzes/1831911", "../data/raw/Rerecognition.txt"),
+        ("Community Expectations", "https://sjsu.instructure.com/courses/1606720/quizzes/1831912", "../data/raw/Community Expectations.txt"),
+        # 100% ("Club Officers and Club Members", "https://sjsu.instructure.com/courses/1606720/quizzes/1831915", "../data/raw/Club Officers and Club Members.txt"),
+        # 100% ("T9", "https://sjsu.instructure.com/courses/1606720/quizzes/1831906", "../data/raw/T9.txt"),
+        # 100% ("Hazing", "https://sjsu.instructure.com/courses/1606720/quizzes/1831914", "../data/raw/Hazing.txt"),
+        ("Events and Spaces on Campus", "https://sjsu.instructure.com/courses/1606720/quizzes/1831918", "../data/raw/Events and Spaces on Campus.txt"),
+        # 100% ("Finance and Bank Accounts", "https://sjsu.instructure.com/courses/1606720/quizzes/1831909", "../data/raw/Finance and Bank Accounts.txt"),
+        ("Funding Sources", "https://sjsu.instructure.com/courses/1606720/quizzes/1831907", "../data/raw/Funding Sources.txt"),
+        # 100% ("Marketing Basics", "https://sjsu.instructure.com/courses/1606720/quizzes/1831908", "../data/raw/Marketing Basics.txt"),
+        # 100% ("Alcohol Basics", "https://sjsu.instructure.com/courses/1606720/quizzes/1831919", "../data/raw/Alcohol Basics.txt"),
+        ("Event Planning", "https://sjsu.instructure.com/courses/1606720/quizzes/1831916", "../data/raw/Event Planning.txt"),
         # ("", "", "../data/raw/.txt"),
     ]
     for name, link, relevant_info in quiz_data:
